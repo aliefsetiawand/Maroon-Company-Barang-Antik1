@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Galeri Antik Nusantara</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- ===== NAVBAR ===== -->
+<nav class="navbar" id="navbar">
+  <a class="nav-logo" onclick="navigate('about')">Tentang</a></li>
+    <li><a data-nav="contact" onclick="navigate('contact')">Kontak</a></li>
+  </ul>nclick="navigate('home')" style="cursor:pointer">Maroon <span>Company</span></a>
+  <ul class="nav-links">
+    <li><a data-nav="home" onclick="navigate('home')" class="active">Home</a></li>
+    <li><a data-nav="collection" onclick="navigate('collection')">Koleksi</a></li>
+    <li><a data-nav="detail" onclick="navigate('collection')">Detail</a></li>
+    <li><a data-nav="about" o
+  <div class="hamburger" onclick="toggleMobileMenu()">
+    <span></span><span></span><span></span>
+  </div>
+</nav>
+
+<!-- Mobile Menu -->
+<div class="mobile-menu" id="mobileMenu">
+  <a data-nav="home" onclick="navigate('home')">Home</a>
+  <a data-nav="collection" onclick="navigate('collection')">Koleksi</a>
+  <a data-nav="about" onclick="navigate('about')">Tentang</a>
+  <a data-nav="contact" onclick="navigate('contact')">Kontak</a>
+</div>
+
+<!-- ===== PAGE: HOME ===== -->
+<div class="page active" id="page-home">
+
+  <!-- Hero -->
+  <section class="hero">
+    <div class="hero-content">
+      <div class="hero-label">Warisan Budaya Nusantara</div>
+      <h1 class="hero-title">Galeri Antik<br><em>Nusantara</em></h1>
+      <p class="hero-desc">
+        Menjaga keindahan masa lampau. Kami menghadirkan koleksi barang antik pilihan dari seluruh Nusantara dan penjuru dunia — setiap benda menyimpan cerita yang tak ternilai.
+      </p>
+      <div class="hero-actions">
+        <button class="btn-primary" onclick="navigate('collection')">Lihat Koleksi</button>
+        <button class="btn-secondary" onclick="navigate('about')">Tentang Kami</button>
+      </div>
+    </div>
+    <div class="hero-visual">
+      <img src="https://images.unsplash.com/photo-1578321272176-b7bbc0679853?w=900&q=80" alt="Antique Collection">
+      <div class="hero-visual-overlay"></div>
+      <div class="hero-stats">
+        <div class="stat-item">
+          <div class="stat-number">200+</div>
+          <div class="stat-label">Koleksi</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-number">15+</div>
+          <div class="stat-label">Tahun</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-number">800+</div>
+          <div class="stat-label">Kolektor</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Featured Products -->
+  <section class="section">
+    <div class="section-header">
+      <div>
+        <div class="section-subtitle">Pilihan Kurator</div>
+        <h2 class="section-title">Produk Unggulan</h2>
+      </div>
+      <button class="btn-secondary" onclick="navigate('collection')">Lihat Semua</button>
+    </div>
+    <div class="products-grid" id="featured-grid">
+      <!-- Rendered by JS -->
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="footer-grid">
+      <div>
+        <div class="footer-brand">Maroon Company</div>
+        <p class="footer-desc">Menjaga warisan kebudayaan melalui koleksi barang antik pilihan dari seluruh penjuru Nusantara dan dunia.</p>
+      </div>
+      <div>
+        <div class="footer-heading">Navigasi</div>
+        <ul class="footer-links">
+          <li><a onclick="navigate('home')">Home</a></li>
+          <li><a onclick="navigate('collection')">Koleksi</a></li>
+          <li><a onclick="navigate('about')">Tentang</a></li>
+          <li><a onclick="navigate('contact')">Kontak</a></li>
+        </ul>
+      </div>
+      <div>
+        <div class="footer-heading">Kontak</div>
+        <ul class="footer-links">
+          <li><a>galeri@antik.id</a></li>
+          <li><a>+62 21 5678 9012</a></li>
+          <li><a>Jl. Kemang Raya No. 88<br>Jakarta Selatan</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span class="footer-copy">© 2024 Galeri Antik Nusantara. Semua hak dilindungi.</span>
+      <span class="footer-copy">Didesain dengan ♥ di Jakarta</span>
+    </div>
+  </footer>
+</div>
+
+<!-- ===== PAGE: COLLECTION ===== -->
+<div class="page" id="page-collection">
+
+  <div class="page-hero">
+    <div class="page-hero-label">Koleksi Kami</div>
+    <h1>Semua Koleksi</h1>
+  </div>
+
+  <!-- Filter Bar -->
+  <div class="filter-bar">
+    <span class="filter-label">Filter:</span>
+    <button class="filter-btn active" data-filter="all" onclick="setFilter('all')">Semua</button>
+    <button class="filter-btn" data-filter="perabot" onclick="setFilter('perabot')">Perabot</button>
+    <button class="filter-btn" data-filter="keramik" onclick="setFilter('keramik')">Keramik</button>
+    <button class="filter-btn" data-filter="lukisan" onclick="setFilter('lukisan')">Seni & Tekstil</button>
+  </div>
+
+  <!-- CRUD Bar -->
+  <div class="crud-bar">
+    <button class="btn-add" onclick="openAdd()">
+      <span>+</span> Tambah Barang
+    </button>
+  </div>
+
+  <!-- Collection Grid -->
+  <div class="collection-grid" id="collection-grid">
+    <!-- Rendered by JS -->
+  </div>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="footer-bottom">
+      <span class="footer-copy">© 2024 Galeri Antik Nusantara. Semua hak dilindungi.</span>
+    </div>
+  </footer>
+</div>
+
+<!-- ===== PAGE: DETAIL ===== -->
+<div class="page" id="page-detail">
+  <div class="detail-container" id="detail-content">
+    <!-- Rendered by JS -->
+  </div>
+  <footer class="footer">
+    <div class="footer-bottom">
+      <span class="footer-copy">© 2024 Galeri Antik Nusantara. Semua hak dilindungi.</span>
+    </div>
+  </footer>
+</div>
+
+<!-- ===== PAGE: ABOUT ===== -->
+<div class="page" id="page-about">
+
+  <div class="about-hero">
+    <div class="about-label">Siapa Kami</div>
+    <h1>Menjaga Warisan,<br>Menghidupkan Kenangan</h1>
+  </div>
+
+  <div class="about-content">
+    <div class="about-text">
+      <div class="section-subtitle">Tentang Galeri</div>
+      <h2 class="section-title" style="margin-bottom:1.25rem">Lebih dari Sekadar Koleksi</h2>
+      <p>Galeri Antik Nusantara didirikan pada tahun 2009 oleh sepasang kolektor yang bersemangat dalam melestarikan warisan budaya Nusantara dan dunia. Berawal dari koleksi pribadi yang sederhana, kini kami telah menjadi salah satu galeri barang antik terpercaya di Indonesia.</p>
+      <p>Setiap barang yang kami hadirkan telah melalui proses kurasi ketat dan verifikasi keaslian oleh para ahli kami. Kami percaya bahwa setiap benda antik menyimpan kisah yang layak untuk diceritakan kembali kepada generasi mendatang.</p>
+      <p>Dengan pengalaman lebih dari 15 tahun, kami telah melayani ratusan kolektor, museum, dan pecinta seni dari seluruh Indonesia dan mancanegara.</p>
+    </div>
+    <div class="vision-mission">
+      <div class="vm-card">
+        <h3>Visi</h3>
+        <p>Menjadi galeri barang antik terkemuka di Asia Tenggara yang menjadi jembatan antara warisan budaya masa lampau dengan apresiasi generasi kini.</p>
+      </div>
+      <div class="vm-card">
+        <h3>Misi</h3>
+        <p>Menghadirkan koleksi barang antik autentik yang telah terverifikasi, mengedukasi masyarakat tentang nilai budaya dan sejarah, serta menjaga keberlanjutan warisan kultural Nusantara.</p>
+      </div>
+      <div class="vm-card">
+        <h3>Nilai Kami</h3>
+        <p>Keaslian, integritas, dan dedikasi dalam setiap aspek pelayanan kami. Setiap transaksi dilandasi kepercayaan dan transparansi penuh kepada kolektor kami.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="about-story">
+    <div class="about-story-inner">
+      <div class="section-subtitle">Cerita Kami</div>
+      <h2>Perjalanan 15 Tahun</h2>
+      <div class="divider" style="margin:1.25rem auto;"></div>
+      <p>Semuanya berawal dari sebuah pasar loak di kawasan Surabaya. Dua orang yang sama-sama terpesona oleh sebuah guci keramik tua akhirnya memutuskan untuk bersama-sama membangun sesuatu yang lebih besar.</p>
+      <p>Dari satu guci itu, kami mulai menjelajahi berbagai pelosok Nusantara — dari pasar Johar di Semarang, Pasar Triwindu di Solo, hingga pelelangan antik di Eropa. Setiap perjalanan selalu menyimpan kejutan yang tak terduga.</p>
+      <p>Kini, dengan lebih dari 200 koleksi aktif dan ribuan barang yang telah berpindah ke tangan kolektor yang mencintainya, kami terus berkomitmen untuk merawat dan menghidupkan kembali warisan yang tak ternilai ini.</p>
+    </div>
+  </div>
+
+  <footer class="footer">
+    <div class="footer-bottom">
+      <span class="footer-copy">© 2024 Galeri Antik Nusantara. Semua hak dilindungi.</span>
+    </div>
+  </footer>
+</div>
+
+<!-- ===== PAGE: CONTACT ===== -->
+<div class="page" id="page-contact">
+
+  <div class="contact-container">
+    <div class="contact-info">
+      <div class="page-hero-label">Hubungi Kami</div>
+      <h1 class="contact-info-title">Kami Senang<br>Mendengar Anda</h1>
+      <p class="contact-info-desc">Memiliki pertanyaan tentang koleksi kami, ingin menjual barang antik, atau sekadar ingin berdiskusi tentang dunia antik? Jangan ragu untuk menghubungi kami.</p>
+      
+      <div class="contact-item">
+        <span class="contact-item-label">Email</span>
+        <span class="contact-item-value">galeri@antik.id</span>
+      </div>
+      <div class="contact-item">
+        <span class="contact-item-label">Telepon</span>
+        <span class="contact-item-value">+62 21 5678 9012</span>
+      </div>
+      <div class="contact-item">
+        <span class="contact-item-label">WhatsApp</span>
+        <span class="contact-item-value">+62 812 3456 7890</span>
+      </div>
+      <div class="contact-item">
+        <span class="contact-item-label">Alamat</span>
+        <span class="contact-item-value">Jl. Kemang Raya No. 88<br>Jakarta Selatan, 12730</span>
+      </div>
+      <div class="contact-item">
+        <span class="contact-item-label">Jam Buka</span>
+        <span class="contact-item-value">Selasa – Minggu, 10.00 – 18.00</span>
+      </div>
+    </div>
+
+    <div class="contact-form-card">
+      <h2 class="contact-form-title">Kirim Pesan</h2>
+      <form class="contact-form" onsubmit="handleContact(event)">
+        <div class="form-group">
+          <label class="form-label">Nama Lengkap *</label>
+          <input type="text" class="form-input" placeholder="Masukkan nama Anda" required>
+        </div>
+        <div class="form-group">
+          <label class="form-label">Email *</label>
+          <input type="email" class="form-input" placeholder="nama@email.com" required>
+        </div>
+        <div class="form-group">
+          <label class="form-label">Nomor Telepon</label>
+          <input type="tel" class="form-input" placeholder="+62 812 xxxx xxxx">
+        </div>
+        <div class="form-group">
+          <label class="form-label">Subjek</label>
+          <select class="form-select">
+            <option value="">Pilih subjek...</option>
+            <option>Pertanyaan Koleksi</option>
+            <option>Jual Barang Antik</option>
+            <option>Konsultasi Keaslian</option>
+            <option>Kerjasama</option>
+            <option>Lainnya</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label class="form-label">Pesan *</label>
+          <textarea class="form-textarea" placeholder="Tulis pesan Anda di sini..." required></textarea>
+        </div>
+        <button type="submit" class="form-submit">Kirim Pesan</button>
+        <div class="success-msg" id="successMsg">
+          ✓ Pesan Anda telah terkirim! Kami akan menghubungi Anda segera.
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <footer class="footer">
+    <div class="footer-bottom">
+      <span class="footer-copy">© 2024 Galeri Antik Nusantara. Semua hak dilindungi.</span>
+    </div>
+  </footer>
+</div>
+
+<!-- ===== CRUD MODAL ===== -->
+<div class="modal-overlay" id="productModal">
+  <div class="modal">
+    <button class="modal-close" onclick="closeModal()" type="button">✕</button>
+    <h2 class="modal-title" id="modalTitle">Tambah Barang Baru</h2>
+    <form id="productForm" onsubmit="return false;">
+      <div class="form-group">
+        <label class="form-label">Nama Barang *</label>
+        <input type="text" class="form-input" id="f-name" placeholder="Contoh: Guci Keramik Ming">
+      </div>
+      <div class="form-row">
+        <div class="form-group">
+          <label class="form-label">Kategori *</label>
+          <select class="form-select" id="f-category">
+            <option value="">Pilih kategori</option>
+            <option value="perabot">Perabot</option>
+            <option value="keramik">Keramik</option>
+            <option value="lukisan">Seni & Tekstil</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label class="form-label">Harga (Rp) *</label>
+          <input type="number" class="form-input" id="f-price" placeholder="Contoh: 5000000">
+        </div>
+      </div>
+      <div class="form-row">
+        <div class="form-group">
+          <label class="form-label">Tahun / Era *</label>
+          <input type="text" class="form-input" id="f-year" placeholder="Contoh: 1920-an">
+        </div>
+        <div class="form-group">
+          <label class="form-label">Asal Barang *</label>
+          <input type="text" class="form-input" id="f-origin" placeholder="Contoh: Jepara, Indonesia">
+        </div>
+      </div>
+      <div class="form-row">
+        <div class="form-group">
+          <label class="form-label">Kondisi</label>
+          <select class="form-select" id="f-condition">
+            <option value="Sangat Baik">Sangat Baik</option>
+            <option value="Baik">Baik</option>
+            <option value="Cukup Baik">Cukup Baik</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label class="form-label">Produk Unggulan</label>
+          <select class="form-select" id="f-featured">
+            <option value="false">Tidak</option>
+            <option value="true">Ya</option>
+          </select>
+        </div>
+      </div>
+      <div class="form-group">
+        <label class="form-label">URL Gambar</label>
+        <input type="url" class="form-input" id="f-image" placeholder="https://...">
+      </div>
+      <div class="form-group">
+        <label class="form-label">Deskripsi *</label>
+        <textarea class="form-textarea" id="f-description" placeholder="Deskripsi lengkap barang antik..."></textarea>
+      </div>
+      <div class="modal-actions">
+        <button class="btn-cancel" onclick="closeModal()" type="button">Batal</button>
+        <button class="btn-save"   onclick="saveProduct()" type="button">Simpan</button>
+      </div>
+    </form>
+  </div>
+</div>
+
+<!-- Toast -->
+<div class="toast" id="toast"></div>
+
+<script src="app.js"></script>
+</body>
+</html>
